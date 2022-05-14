@@ -1,6 +1,7 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple example of how to implement a carousel, using material ui.
 
 ## Available Scripts
 

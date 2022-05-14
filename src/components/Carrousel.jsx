@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import { useTheme } from '@mui/material/styles';
 import { Box, MobileStepper, Typography, Button, Grid } from '@mui/material';
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
@@ -10,7 +10,7 @@ const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 export const Carrousel = ({ imgList }) => {
     const theme = useTheme();
-    const [activeStep, setActiveStep] = React.useState(0);
+    const [activeStep, setActiveStep] = useState(0);
     const maxSteps = imgList.length;
 
     const handleNext = () => {
@@ -27,8 +27,7 @@ export const Carrousel = ({ imgList }) => {
 
     return (
         <Box sx={{ maxWidth: '85vw', flexGrow: 1 }}>
-            <Box display="flex" justifyContent="center" mb={2} /* bgcolor='blue' */>
-
+            <Box display="flex" justifyContent="center" mb={2}>
                 <Typography color="primary" align="center" variant='h5' >{imgList[activeStep].label}</Typography>
             </Box>
             <AutoPlaySwipeableViews axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'} index={activeStep} onChangeIndex={handleStepChange} enableMouseEvents >
